@@ -51,6 +51,5 @@ object WallService {
             return false
         }
     }
-// инициация изменений
 }
 
