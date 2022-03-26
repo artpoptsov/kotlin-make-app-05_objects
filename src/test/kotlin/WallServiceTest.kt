@@ -11,7 +11,7 @@ class WallServiceTest {
 
         val service = WallService
         val result = service.add(Post(date = 12011987, text = "Тест", friendOnly = true, like = 32, ownerId = 21))
-        assert(result.id != 0)
+        assertTrue(result.id != 0)
     }
 
     @Test
