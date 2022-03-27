@@ -17,7 +17,14 @@ object WallService {
         } else {
 
             val sourcePost = posts[postUp.id - 1]
-            val postUpdate = Post(postUp.id, sourcePost.date, sourcePost.ownerId, postUp.text, postUp.friendOnly, postUp.like)
+            val postUpdate = Post(
+                id = postUp.id,
+                date = sourcePost.date,
+                ownerId = sourcePost.ownerId,
+                text = postUp.text,
+                friendOnly = postUp.friendOnly,
+                like = postUp.like
+            )
 
             for ((index, post) in posts.withIndex()) {
                 if (postUp.id == post.id) {
