@@ -1,4 +1,6 @@
-package ru.netology
+//package ru.netology
+
+import attachment.Attachment
 
 object WallService {
     private var posts = emptyArray<Post>()
@@ -35,4 +37,19 @@ object WallService {
             return false
         }
     }
+
+    fun printToScreen(index: Int) {
+        println(posts[index - 1])
+    }
+
+    fun attachmentAdd(postIndex: Int, attach: Attachment): Boolean {
+        if (posts.size <= postIndex - 1) {
+            return false
+        } else {
+            val post = posts[postIndex - 1]
+            post.attachment += attach
+            return true
+        }
+    }
+
 }

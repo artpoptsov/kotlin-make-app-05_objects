@@ -1,8 +1,8 @@
+import attachment.Audio
+import attachment.AudioAttachment
 import org.junit.Test
 
 import org.junit.Assert.*
-import ru.netology.Post
-import ru.netology.WallService
 
 class WallServiceTest {
 
@@ -44,6 +44,54 @@ class WallServiceTest {
         val result = service.update(update)
 
         assertFalse(result)
+    }
+
+    @Test
+    fun `attachment add is false because postId is not valid`() {
+
+        val service = WallService
+
+        val audioAttach = AudioAttachment(
+            Audio(
+            32,
+            98,
+            12,
+            "Сергей Шнкуров",
+            2365,
+            "ссылка url",
+            658789
+        )
+        )
+
+        val postIndex = 10
+
+        val result = service.attachmentAdd(postIndex, audioAttach)
+
+        assertFalse(result)
+    }
+
+    @Test
+    fun `attachment add is true because postId is not valid`() {
+
+        val service = WallService
+
+        val audioAttach = AudioAttachment(
+            Audio(
+                32,
+                98,
+                12,
+                "Сергей Шнкуров",
+                2365,
+                "ссылка url",
+                658789
+            )
+        )
+
+        val postIndex = 1
+
+        val result = service.attachmentAdd(postIndex, audioAttach)
+
+        assertTrue(result)
     }
 
 }
