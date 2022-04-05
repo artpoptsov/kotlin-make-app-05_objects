@@ -41,7 +41,7 @@ fun main() {
     WallService.createComment(comment1)
     WallService.createComment(comment2)
 
-    WallService.printToScreenAll()
+//    WallService.printToScreenAll()
 
 }
 

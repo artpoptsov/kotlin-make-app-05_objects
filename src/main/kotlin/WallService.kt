@@ -52,13 +52,14 @@ object WallService {
         }
     }
 
-    fun createComment(comment: Comment) {
+    fun createComment(comment: Comment): Boolean {
         val postIndex = comment.post_id - 1
 
         if (posts.size <= postIndex) {
             throw PostNotFoundException("Пост ID = ${comment.post_id} не найден")
         } else {
             posts[postIndex].comments += comment
+            return true
         }
     }
 }
