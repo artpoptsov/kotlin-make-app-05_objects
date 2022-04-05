@@ -1,4 +1,6 @@
-package ru.netology
+//package ru.netology
+
+import attachment.Attachment
 
 object WallService {
     private var posts = emptyArray<Post>()
@@ -17,7 +19,14 @@ object WallService {
         } else {
 
             val sourcePost = posts[postUp.id - 1]
-            val postUpdate = Post(postUp.id, sourcePost.date, sourcePost.ownerId, postUp.text, postUp.friendOnly, postUp.like)
+            val postUpdate = Post(
+                id = postUp.id,
+                date = sourcePost.date,
+                ownerId = sourcePost.ownerId,
+                text = postUp.text,
+                friendOnly = postUp.friendOnly,
+                like = postUp.like
+            )
 
             for ((index, post) in posts.withIndex()) {
                 if (postUp.id == post.id) {
@@ -28,4 +37,19 @@ object WallService {
             return false
         }
     }
+
+    fun printToScreen(index: Int) {
+        println(posts[index - 1])
+    }
+
+    fun attachmentAdd(postIndex: Int, attach: Attachment): Boolean {
+        if (posts.size <= postIndex - 1) {
+            return false
+        } else {
+            val post = posts[postIndex - 1]
+            post.attachment += attach
+            return true
+        }
+    }
+
 }
