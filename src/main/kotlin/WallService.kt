@@ -32,7 +32,7 @@ object WallService {
     }
 
     fun printToScreen(index: Int) {
-        println(posts[index - 1])
+        println(WallService.findPostById(index))
     }
 
     fun printToScreenAll() {
@@ -61,5 +61,14 @@ object WallService {
             posts[postIndex].comments += comment
             return true
         }
+    }
+
+    private fun findPostById(postIdToFind: Int): Post? {
+        for ((index, post) in posts.withIndex()) {
+            if (postIdToFind == post.id) {
+                return post
+            }
+        }
+        return null
     }
 }
