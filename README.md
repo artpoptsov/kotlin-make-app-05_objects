@@ -1,2 +1,3 @@
-# kotlin-make-app-05_objects
+# kotlin-make-app
 Нетология, разработка приложений Kotlin
+Домашние задания
