@@ -131,4 +131,32 @@ class WallServiceTest {
         service.createComment(comment)
     }
 
+    @Test
+    fun `find post by id used printToScreen is OK`() {
+        val service = WallService
+
+        service.printToScreen(1)
+
+        val result = service.printToScreen(1)
+
+        assertNotNull(result)
+    }
+
+    @Test
+    fun `find post by id used printToScreen is null`() {
+        val service = WallService
+
+        val result = service.printToScreen(30)
+
+        assertNotNull(result)
+    }
+
+    @Test
+    fun `print all posts`() {
+        val service = WallService
+
+        val result = service.printToScreenAll()
+
+    }
+
 }
