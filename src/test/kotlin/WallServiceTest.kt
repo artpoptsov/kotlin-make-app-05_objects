@@ -3,6 +3,9 @@ import attachment.AudioAttachment
 import org.junit.Test
 
 import org.junit.Assert.*
+import post.Comment
+import post.Post
+import post.PostNotFoundException
 
 class WallServiceTest {
 

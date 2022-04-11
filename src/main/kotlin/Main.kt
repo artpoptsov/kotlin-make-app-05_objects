@@ -1,5 +1,7 @@
 import attachment.Audio
 import attachment.AudioAttachment
+import post.Comment
+import post.Post
 
 fun main() {
 
@@ -26,7 +28,7 @@ fun main() {
     )
     val comment2 = Comment(
         owner_id = 399,
-        post_id = 2,
+        post_id = 3,
         message = "Второй комментарий за день",
     )
 

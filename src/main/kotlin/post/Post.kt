@@ -1,4 +1,7 @@
+package post
+
 import attachment.Attachment
+import post.Comment
 
 data class Post(
     val id: Int = 0,

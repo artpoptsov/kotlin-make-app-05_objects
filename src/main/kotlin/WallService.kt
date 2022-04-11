@@ -1,4 +1,7 @@
 import attachment.Attachment
+import post.Comment
+import post.Post
+import post.PostNotFoundException
 
 object WallService {
     private var posts = emptyArray<Post>()
